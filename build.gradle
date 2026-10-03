@@ -120,10 +120,6 @@ tasks.register("obfuscateRemappedJar", proguard.gradle.ProGuardTask) {
     keepdirectories()
 
     // Keep Fabric/Mixin bootstrap names stable.
-    keep(classSpecification {
-        annotation = "net.fabricmc.api.ClientModInitializer"
-        publicnode = true
-    })
     keep("public class us.kenny.MultiKeyBindingClient { *; }")
 
     // Keep mixin classes/configuration classes stable. Their referenced Minecraft
@@ -131,13 +127,8 @@ tasks.register("obfuscateRemappedJar", proguard.gradle.ProGuardTask) {
     keep("class us.kenny.mixin.** { *; }")
     keep("class us.kenny.core.controlling.** { *; }")
 
-    // Keep resource files while adapting embedded class names.
-    adaptresourcefilecontents(
-        "fabric.mod.json",
-        "multi-key-bindings.mixins.json",
-        "multi-key-bindings.controlling.mixins.json"
-    )
-
+    // Fabric metadata and mixin configs reference the kept class names above,
+    // so their resource contents do not need rewriting.
     // Rename project-owned classes/members that aren't part of Fabric discovery.
     repackageclasses("obf")
 
