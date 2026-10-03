@@ -107,7 +107,6 @@ tasks.register("obfuscateRemappedJar", proguard.gradle.ProGuardTask) {
 
     dontoptimize()
     dontshrink()
-    dontpreverify()
     dontnote()
     dontwarn()
 
