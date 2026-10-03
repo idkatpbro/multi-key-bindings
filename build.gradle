@@ -113,7 +113,7 @@ tasks.register("obfuscateRemappedJar", proguard.gradle.ProGuardTask) {
     keepattributes(
         "RuntimeVisibleAnnotations,RuntimeInvisibleAnnotations," +
         "RuntimeVisibleParameterAnnotations,RuntimeInvisibleParameterAnnotations," +
-        "AnnotationDefault,Signature,InnerClasses,EnclosingMethod"
+        "AnnotationDefault,Signature,InnerClasses,EnclosingMethod,StackMapTable"
     )
 
     keepdirectories()
