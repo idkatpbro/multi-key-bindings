@@ -34,3 +34,5 @@ jobs:
           name: Multi-Key-Bindings-1.21.11
           path: build/libs/*.jar
           if-no-files-found: error
+
+# ProGuard configuration fix trigger
