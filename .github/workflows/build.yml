@@ -1,7 +1,7 @@
 # Automatically build the project and create a normal + obfuscated Fabric 1.21.11 jar.
 
 name: build
-on: [pull_request, push]
+on:\n  push:\n  pull_request:\n  workflow_dispatch:
 
 jobs:
   build:
